@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # This script pings a list of servers and reports their status.
 
 SERVER_FILE='./servers'
