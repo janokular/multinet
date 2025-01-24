@@ -8,7 +8,6 @@ SERVER_FILE='./servers'
 # Options for the ssh command
 SSH_OPTIONS='-o ConnectTimeout=2'
 
-# Display usage instructions
 usage() {
   echo "Usage: ${0} [-nsv] [-f FILE] COMMAND"
   echo 'Executes COMMAND as a single command on every server.'
