@@ -16,6 +16,8 @@ for SERVER in $(cat ${SERVER_FILE})
 do
   echo "Pinging ${SERVER}"
   ping -c 1 ${SERVER} &> /dev/null
+
+  # Check the status of the ping command
   if [[ "${?}" -ne 0 ]]
   then
     echo "${SERVER} down."
