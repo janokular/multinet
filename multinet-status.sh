@@ -4,7 +4,7 @@
 
 SERVER_FILE='./servers'
 
-# Check if SERVER_FILE exists and is a file
+# Check if SERVER_FILE exists
 if [[ ! -e "${SERVER_FILE}" ]]
 then
   echo "Cannot open ${SERVER_FILE}" >&2
