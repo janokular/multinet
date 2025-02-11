@@ -49,7 +49,7 @@ done
 # Remove the options while leaving the remaining arguments
 shift "$(( OPTIND - 1 ))"
 
-# Check if user provided at leas one argument to the script
+# Check if user provided at least one argument to the script
 if [[ "${#}" -lt 1 ]]
 then
   usage
