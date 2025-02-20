@@ -27,7 +27,7 @@ verbose() {
   fi
 }
 
-# Check if script is not run with sudo/root privliges
+# Check if script is not run with sudo/root privileges
 if [[ "${UID}" -eq 0 ]] 
 then
   echo 'Do not execute this script as root. Use the -s option instead.' >&2
