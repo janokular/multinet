@@ -11,5 +11,5 @@ fi
 echo 'vagrant:vagrant' | chpasswd
 
 # Copy ssh server configuration file 
-cp /vagrant/sshd_config /etc/ssh/
+cp /vagrant/.setup/sshd_config /etc/ssh/
 service sshd restart

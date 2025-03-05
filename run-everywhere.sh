@@ -3,7 +3,7 @@
 # This script allows exection of command on the list of servers
 
 # List of servers, one per line
-SERVER_FILE='./servers'
+SERVER_FILE='/vagrant/servers'
 
 # Options for the ssh command
 SSH_OPTIONS='-o ConnectTimeout=2'

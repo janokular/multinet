@@ -2,7 +2,7 @@
 
 # This script pings a list of servers and reports their status
 
-SERVER_FILE='./servers'
+SERVER_FILE='/vagrant/servers'
 
 # Check if SERVER_FILE exists
 if [[ ! -e "${SERVER_FILE}" ]]
