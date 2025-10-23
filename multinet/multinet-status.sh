@@ -2,26 +2,23 @@
 
 # This script pings a list of servers and reports their status
 
-SERVER_FILE='/vagrant/multinet/servers'
+server_file='/vagrant/multinet/servers'
 
-# Check if SERVER_FILE exists
-if [[ ! -e "${SERVER_FILE}" ]]
-then
-  echo "Cannot open ${SERVER_FILE}" >&2
+# Check if server_file exists
+if [[ ! -e "${server_file}" ]]; then
+  echo "Cannot open ${server_file}" >&2
   exit 1
 fi
 
-# Ping every server from the SERVER_FILE
-for SERVER in $(cat ${SERVER_FILE})
-do
-  echo "Pinging ${SERVER}"
-  ping -c 1 ${SERVER} &> /dev/null
+# Ping every server from the server_file
+for server in $(cat ${server_file}); do
+  echo "Pinging ${server}"
+  ping -c 1 ${server} &> /dev/null
 
   # Check the status of the ping command
-  if [[ "${?}" -ne 0 ]]
-  then
-    echo "${SERVER} down."
+  if [[ "${?}" -ne 0 ]]; then
+    echo "${server} down."
   else
-    echo "${SERVER} up."
+    echo "${server} up."
   fi
 done
