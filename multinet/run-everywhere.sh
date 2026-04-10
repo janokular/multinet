@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# This script allows exection of command on the list of servers
+# This script run commands on every server listed in servers.txt
 
 # List of servers, one per line
-server_file='/vagrant/multinet/servers'
+server_file='./servers.txt'
 
-# options for the ssh command
+# Options for the ssh command
 ssh_options='-o ConnectTimeout=2'
 
 usage() {
@@ -54,7 +54,7 @@ fi
 # Anything that remains on the command line is to be treated as a single command
 command="${@}"
 
-# Later assing an exit status of an ssh_command
+# Later assign an exit status of an ssh_command
 exit_status='0'
 
 # Make sure the server_file file exists

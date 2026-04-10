@@ -2,7 +2,11 @@
 
 # This script pings a list of servers and reports their status
 
-server_file='/vagrant/multinet/servers'
+server_file='./servers.txt'
+
+red="\033[0;31m"
+green="\033[0;32m"
+reset="\033[0m"
 
 # Check if server_file exists
 if [[ ! -e "${server_file}" ]]; then
@@ -12,13 +16,13 @@ fi
 
 # Ping every server from the server_file
 for server in $(cat ${server_file}); do
-  echo "Pinging ${server}"
+  echo "Pinging ${server}..."
   ping -c 1 ${server} &> /dev/null
 
   # Check the status of the ping command
   if [[ "${?}" -ne 0 ]]; then
-    echo "${server} down."
+    echo -e "${red}${server} is down!${reset}\n"
   else
-    echo "${server} up."
+    echo -e "${green}${server} is up!${reset}\n"
   fi
 done

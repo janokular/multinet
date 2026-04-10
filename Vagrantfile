@@ -15,10 +15,10 @@ Vagrant.configure("2") do |config|
     server02.vm.provision "shell", path: ".provision/server-setup.sh"
   end
 
-  config.vm.define "admin01" do |admin01|
-    admin01.vm.hostname = "admin01"
-    admin01.vm.network "private_network", ip: "10.9.8.10"
+  config.vm.define "admin00" do |admin00|
+    admin00.vm.hostname = "admin00"
+    admin00.vm.network "private_network", ip: "10.9.8.10"
     
-    admin01.vm.provision "shell", path: ".provision/client-setup.sh"
+    admin00.vm.provision "shell", path: ".provision/admin-setup.sh"
   end
 end
